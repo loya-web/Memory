@@ -4,4 +4,4 @@ Se añadieron modificaciones para contar el número de taps y desplegarlo en pan
 
 Se añadieron modificaciones a los colores de los números, con el fin de que los usuarios utilicen algo diferente a los números para resolver el juego.
 
-Se añadieron modificaciones para identificar cuando se completó el juego y para centrar los dígitos en cada cuadro.
+Se añadieron modificaciones para centrar los números en cada cuadro y para identificar cuando el juego se termina.
