@@ -18,7 +18,7 @@ car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
-
+colores = ['red', 'green', 'purple', 'orange', 'magenta', 'cyan', 'brown', 'pink', 'gold', 'violet']
 
 def square(x, y):
     """Draw white square with black outline at (x, y)."""
@@ -74,7 +74,7 @@ def draw():
         x, y = xy(mark)
         up()
         goto(x + 2, y)
-        color('black')
+        color(colores[tiles[mark] % len(colores)])
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
     update()
