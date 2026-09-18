@@ -8,7 +8,6 @@ Exercises:
 4. Center single-digit tile.
 5. Use letters instead of tiles.
 """
-
 from random import *
 from turtle import *
 
@@ -16,7 +15,7 @@ from freegames import path
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
-state = {'mark': None}
+state = {'mark': None, 'taps': 0}
 hide = [True] * 64
 colores = ['red', 'green', 'purple', 'orange', 'magenta', 'cyan', 'brown', 'pink', 'gold', 'violet']
 
@@ -45,6 +44,7 @@ def xy(count):
 
 def tap(x, y):
     """Update mark and hidden tiles based on tap."""
+    state['taps'] += 1  # Contador de clics
     spot = index(x, y)
     mark = state['mark']
 
@@ -76,6 +76,12 @@ def draw():
         goto(x + 2, y)
         color(colores[tiles[mark] % len(colores)])
         write(tiles[mark], font=('Arial', 30, 'normal'))
+
+    # Dibuja el contador de clics
+    up()
+    goto(-200, 185)
+    color('black')
+    write(f"Taps: {state['taps']}", font=('Arial', 14, 'bold'))
 
     update()
     ontimer(draw, 100)
